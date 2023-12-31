@@ -8,7 +8,7 @@ import pickle
 
 
 datapath = "Data/DataSet.xlsx"
-df = pd.read_excel(datapath, sheet_name="FF")
+df = pd.read_excel(datapath, sheet_name="FF1")
 
 heatmap_col = [
     "LA_N",
@@ -26,6 +26,7 @@ cormatrix = df[heatmap_col].corr()
 plt.figure(figsize=(8, 6))
 plt.title("Correlation Heatmap")
 sns.heatmap(cormatrix, annot=True, cmap="coolwarm", fmt=".2f", annot_kws={"size": 10})
+plt.show()
 
 
 X = df1.drop("PRICE_N", axis=1)
